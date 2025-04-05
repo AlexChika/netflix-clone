@@ -7,10 +7,11 @@ const images = await getImages();
 type Props = {
   interval: number;
   id?: string;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
 };
 
 function ImageCarousel(props: Props) {
-  const { interval = 3, id = "uniqueId" } = props;
+  const { setPage, interval = 3, id = "uniqueId" } = props;
 
   const _index = useRef(images.length - 1);
   const [index, setIndex] = useState(_index.current);
@@ -18,7 +19,7 @@ function ImageCarousel(props: Props) {
   const imageContainerRef = useRef<HTMLDivElement>(null);
 
   const [direction] = useSwipe(imageContainerRef, 150);
-  const clickonce = useClickOnce(500);
+  const [clickonce, waiting] = useClickOnce(800);
 
   //   helper funcs
   const getElements = useCallback(
@@ -88,10 +89,12 @@ function ImageCarousel(props: Props) {
         photos.forEach((p, i) => {
           if (i !== index && i !== nxtIndex) p.style.width = prevSizes[i].width;
         });
-      }, 300);
+      }, 400);
 
-      _index.current = nxtIndex;
-      setIndex(nxtIndex);
+      setTimeout(() => {
+        _index.current = nxtIndex;
+        setIndex(nxtIndex);
+      }, 800);
     },
     [getElements]
   ); // photo stacker (re-stacks and resize the images)
@@ -122,6 +125,10 @@ function ImageCarousel(props: Props) {
 
     return () => clearInterval(intervalID);
   }, [play, interval, stack]);
+
+  useEffect(() => {
+    setPage(index);
+  }, [index, setPage]);
 
   return (
     <CarouselWrapper $src={images[index].src}>
@@ -165,6 +172,7 @@ function ImageCarousel(props: Props) {
         {/*arrow buttons wrapper */}
         <div className="arrow_btns_wrapper">
           <button
+            disabled={waiting}
             className="left_btn"
             onClick={() =>
               clickonce(() => {
@@ -176,6 +184,7 @@ function ImageCarousel(props: Props) {
           </button>
 
           <button
+            disabled={waiting}
             className="right_btn"
             onClick={() =>
               clickonce(() => {
@@ -283,6 +292,11 @@ const CarouselWrapper = styled.div<WrapperProp>`
       top: 50%;
     }
 
+    .left_btn[disabled],
+    .right_btn[disabled] {
+      cursor: not-allowed;
+    }
+
     .left_btn {
       left: -44px;
     }
@@ -341,7 +355,7 @@ const CarouselWrapper = styled.div<WrapperProp>`
       position: absolute;
       height: 100%;
       border-radius: 24px;
-      transition: width 300ms linear;
+      transition: width 400ms linear;
     }
 
     img {

@@ -4,16 +4,17 @@ import ImageCarousel from "./imagecarousel/ImageCarousel";
 type Props = {
   isOpen: boolean;
   handleOpenCloseModal: (action: "close" | "open") => void;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
 };
 
 function Modal(props: Props) {
-  const { handleOpenCloseModal, isOpen } = props;
+  const { handleOpenCloseModal, isOpen, setPage } = props;
 
   return (
     <ModalWrapper className={isOpen ? "open" : ""}>
       <div className={`modal_body ${isOpen ? "open" : ""}`}>
         <Button onClick={() => handleOpenCloseModal("close")}>&times;</Button>
-        <ImageCarousel interval={5} />
+        <ImageCarousel setPage={setPage} interval={5} />
       </div>
     </ModalWrapper>
   );
