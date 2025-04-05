@@ -55,7 +55,7 @@ const Form = ({ btnAlign = "flex-start" }: FormProp) => {
       $data={{ inputEmail, isEmailValid, btnAlign }}
     >
       <div className="input">
-        <p>Email address</p>
+        <label>Email address (Demo Only)</label>
         <input
           onChange={inputEmailOnchange}
           value={inputEmail}
@@ -69,7 +69,7 @@ const Form = ({ btnAlign = "flex-start" }: FormProp) => {
       </div>
 
       <button className="f items-center justify-center" type="submit">
-        Get Started
+        Let's Get Started
         <MdArrowForwardIos className="icon" />
       </button>
     </FormWrapper>
@@ -89,7 +89,7 @@ const FormWrapper = styled.form<DataProp>`
     position: relative;
     width: 100%;
 
-    p {
+    label {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -123,7 +123,7 @@ const FormWrapper = styled.form<DataProp>`
     }
   }
 
-  &:has(input:focus) p {
+  &:has(input:focus) label {
     font-size: 11px;
     top: 20%;
     font-size: 11px;

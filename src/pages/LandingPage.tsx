@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 // import LandingPageOne from "../components/landingPageOne/LandingPageOne";
-import LandingPageTwo from "../components/landingPageTwo/LandingPageTwo";
+// import LandingPageTwo from "../components/landingPageTwo/LandingPageTwo";
+import LandingPageThree from "../components/landingPageThree/LandingPageThree";
 
 const LandingPage = () => {
   const [, setNum] = useState(Math.floor(Math.random() * 3));
@@ -26,7 +27,7 @@ const LandingPage = () => {
 
   return (
     <>
-      <LandingPageTwo />
+      <LandingPageThree />
     </>
   );
 
