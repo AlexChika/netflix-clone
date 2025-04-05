@@ -55,8 +55,10 @@ const Form = ({ btnAlign = "flex-start" }: FormProp) => {
       $data={{ inputEmail, isEmailValid, btnAlign }}
     >
       <div className="input">
-        <label>Email address (Demo Only)</label>
+        <label htmlFor="DemoEmail">Email address (Demo Only)</label>
         <input
+          autoComplete="email"
+          id="DemoEmail"
           onChange={inputEmailOnchange}
           value={inputEmail}
           type="email"

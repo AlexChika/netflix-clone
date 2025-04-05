@@ -1,29 +1,29 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 
 function useClickOnce(timeout = 1500) {
-  const [startWaiting, setStartwaiting] = useState(false);
+  const [waiting, setWaiting] = useState(false);
   const [clicked, setClicked] = useState(false);
   const func = useRef<() => void>(null);
 
   useEffect(() => {
-    if (startWaiting || !clicked) return;
+    if (waiting || !clicked) return;
 
     func.current?.();
 
     setTimeout(() => {
       setClicked(false);
-      setStartwaiting(false);
+      setWaiting(false);
     }, timeout);
 
-    setStartwaiting(true);
-  }, [startWaiting, clicked, timeout]);
+    setWaiting(true);
+  }, [waiting, clicked, timeout]);
 
   const clickonce = useCallback(function (callback: () => void) {
     func.current = callback;
     setClicked(true);
   }, []);
 
-  return clickonce;
+  return [clickonce, waiting] as const;
 }
 
 async function getImages() {

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import useDrag from "./useDrag";
 import styled from "styled-components";
 import { createPortal } from "react-dom";
@@ -7,14 +7,19 @@ import Modal from "./Modal";
 
 type Props = {
   open?: boolean;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
 };
 
 function Carousel(props: Props) {
-  const { open = true } = props;
+  const { open = true, setPage } = props;
 
   const [isOpen, setIsOpen] = useState(open);
   const ballRef = useRef<HTMLDivElement>(null);
   useDrag(ballRef, handleOpenCloseModal);
+
+  useEffect(() => {
+    console.log("rendered");
+  });
 
   function handleOpenCloseModal(action = "open") {
     if (action === "close") {
@@ -28,14 +33,18 @@ function Carousel(props: Props) {
     <Wrapper>
       <Ball isOpen={isOpen} ref={ballRef} />
 
-      <Modal isOpen={isOpen} handleOpenCloseModal={handleOpenCloseModal} />
+      <Modal
+        setPage={setPage}
+        isOpen={isOpen}
+        handleOpenCloseModal={handleOpenCloseModal}
+      />
     </Wrapper>,
     document.body,
     "project_overview"
   );
 }
 
-export default Carousel;
+export default memo(Carousel);
 
 const Wrapper = styled.div`
   --ball-color: #b81d24;
