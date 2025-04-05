@@ -158,9 +158,6 @@ function useDrag(
     if (!element) return;
 
     element.addEventListener("mousedown", handleDragStart);
-    element.addEventListener("touchstart", (e) => e.preventDefault(), {
-      passive: false,
-    });
     element.addEventListener("touchstart", handleDragStart, {
       passive: false,
     });

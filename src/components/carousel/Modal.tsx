@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ImageCarousel from "./ImageCarousel";
+import ImageCarousel from "./imagecarousel/ImageCarousel";
 
 type Props = {
   isOpen: boolean;
@@ -12,14 +12,8 @@ function Modal(props: Props) {
   return (
     <ModalWrapper className={isOpen ? "open" : ""}>
       <div className={`modal_body ${isOpen ? "open" : ""}`}>
-        <button
-          className="modal_body_close_btn"
-          onClick={() => handleOpenCloseModal("close")}
-        >
-          &times;
-        </button>
-
-        <ImageCarousel />
+        <Button onClick={() => handleOpenCloseModal("close")}>&times;</Button>
+        <ImageCarousel interval={5} />
       </div>
     </ModalWrapper>
   );
@@ -40,7 +34,6 @@ const ModalWrapper = styled.div`
   align-items: center;
   justify-content: center;
   transition: all 0.5s linear;
-  background-color: rgba(0, 0, 0, 0.5); /// remove
 
   &.open {
     opacity: 1;
@@ -51,7 +44,7 @@ const ModalWrapper = styled.div`
     position: relative;
     z-index: 999998;
     width: 95%;
-    max-width: 680px;
+    max-width: 896px;
     transform: scale(0);
     opacity: 0;
     transition: all 0.5s linear;
@@ -63,16 +56,16 @@ const ModalWrapper = styled.div`
     transform: scale(1);
     opacity: 1;
   }
+`;
 
-  /* the modal close button */
-  .modal_body_close_btn {
-    line-height: 0;
-    font-size: 25px;
-    font-weight: 200;
-    position: absolute;
-    top: 5px;
-    right: -25px;
-    opacity: 0.8;
-    color: var(--ball-color);
-  }
+/* the modal close button */
+const Button = styled.button`
+  line-height: 0;
+  font-size: 25px;
+  font-weight: 200;
+  position: absolute;
+  top: 5px;
+  right: -25px;
+  opacity: 0.8;
+  color: var(--ball-color);
 `;
