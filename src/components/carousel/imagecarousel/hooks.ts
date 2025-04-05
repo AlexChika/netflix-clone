@@ -91,7 +91,6 @@ function useSwipe(ref: Ref, threshold = 100) {
       const diffX = Math.abs(startX - endX);
       const diffY = Math.abs(startY - endY);
 
-      console.log({ startX, startY, endX, endY, diffX, diffY });
       const isSwiped = diffX > threshold || diffY > threshold;
 
       if (isSwiped) {
