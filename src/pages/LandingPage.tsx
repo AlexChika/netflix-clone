@@ -18,16 +18,6 @@ const LandingPage = ({ page }: { page: number }) => {
       <LandingPageFour />
     </>
   );
-
-  return (
-    <>
-      {page === 0 && <LandingPageOne />}
-
-      {page === 1 && <LandingPageTwo />}
-
-      {page === 2 && <LandingPageThree />}
-    </>
-  );
 };
 
 export default LandingPage;
