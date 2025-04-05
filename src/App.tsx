@@ -9,7 +9,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <LandingPage />;
-      <Carousel />
+      <Carousel open={false} />
     </ThemeProvider>
   );
 }
