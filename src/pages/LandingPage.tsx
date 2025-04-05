@@ -1,26 +1,23 @@
 import LandingPageOne from "../components/landingPageOne/LandingPageOne";
 import LandingPageTwo from "../components/landingPageTwo/LandingPageTwo";
 import LandingPageThree from "../components/landingPageThree/LandingPageThree";
+import LandingPageFour from "../components/landingPageFour/LandingPageFour";
 
 const LandingPage = ({ page }: { page: number }) => {
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setNum((prevNum) => {
-  //       return prevNum + 1 > 2 ? 0 : prevNum + 1;
-  //     });
-  //   }, 6000);
+  return (
+    <>
+      {page === 0 && <LandingPageOne />}
 
-  //   const stopInterval = () => {
-  //     // clearInterval(interval);
-  //   };
+      {page === 1 && <LandingPageTwo />}
 
-  //   window.addEventListener("click", stopInterval);
-
-  //   return () => {
-  //     clearInterval(interval);
-  //     window.removeEventListener("click", stopInterval);
-  //   };
-  // }, []);
+      {page === 2 && <LandingPageThree />}
+    </>
+  );
+  return (
+    <>
+      <LandingPageFour />
+    </>
+  );
 
   return (
     <>

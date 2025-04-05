@@ -8,7 +8,7 @@ const Nav = () => {
         <NetflixLogo class="logo" color="#e50914" />
       </span>
 
-      <button>Sign in</button>
+      <div>Let's Sign in</div>
     </Wrapper>
   );
 };
@@ -28,7 +28,8 @@ const Wrapper = styled.nav`
     cursor: pointer;
   }
 
-  button {
+  div {
+    cursor: pointer;
     background-color: ${({ theme }) => theme.primaryRed};
     border-radius: 4px;
     padding: 8px 15px;
