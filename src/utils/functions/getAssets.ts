@@ -1,6 +1,6 @@
 // landing pages 1
 import BannerImage1 from "../../assets/landingPageOne/banner-hero-image.png";
-import ChildrenProfileImage1 from "../../assets/landingPageOne/children-profile-image.png";
+import ChildrenProfileImage1 from "../../assets/landingPageOne/kids-image.png";
 import WatchTvImage1 from "../../assets/landingPageOne/watch-tv-image.png";
 import WatchTvVideo1 from "../../assets/landingPageOne/watch-tv-video.mp4";
 import DownloadOfflineImage1 from "../../assets/landingPageOne/download-offline-image.png";
