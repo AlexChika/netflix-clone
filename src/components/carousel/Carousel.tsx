@@ -51,4 +51,8 @@ const Wrapper = styled.div`
   height: 100%;
   z-index: 9999;
   pointer-events: none;
+
+  @media screen and (max-width: 760px) {
+    display: none; // check this
+  }
 `;
