@@ -14,7 +14,9 @@ const WatchEveryWhereCards = () => {
       {/* text wrapper */}
       <div className="text-wrapper">
         <h2>Download your shows to watch offline</h2>
-        <h3>Save your favorites easily and always have something to watch.</h3>
+        <h3>
+          Save your favorites easily and always have something to watch later.
+        </h3>
       </div>
     </Wrapper>
   );

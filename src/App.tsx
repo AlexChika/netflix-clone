@@ -11,7 +11,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <LandingPage page={page} />;
+      <LandingPage page={page} />
       <Carousel setPage={setPage} open={true} />
     </ThemeProvider>
   );

@@ -75,25 +75,24 @@ const Wrapper = styled.div`
       height: calc(100% - 85px);
       max-width: 1065px;
       text-align: center;
-      padding: 0px 20px 20px 20px;
+      padding: 60px 20px 60px 20px;
 
       h2 {
-        max-width: 600px;
-        font-size: clamp(1.2rem, 5.5vw, 5rem);
+        max-width: 500px;
+        font-size: clamp(20px, 8vw, 40px);
         text-align: left;
         font-weight: 600;
-        margin-bottom: 15px;
       }
 
       h3 {
-        font-size: clamp(1rem, 5vw, 2.3rem);
+        font-size: clamp(16px, 5vw, 25px);
         text-align: left;
-        margin-top: 10px;
+        margin-top: 20px;
         max-width: max-content;
       }
 
       h4 {
-        font-size: clamp(0.9rem, 5vw, 1.9rem);
+        font-size: clamp(14px, 4vw, 18px);
         text-align: left;
         max-width: max-content;
         margin-top: 20px;
@@ -105,26 +104,24 @@ const Wrapper = styled.div`
   @media screen and (min-width: 600px) {
     .banner__content__wrapper {
       .banner__content {
-        padding: 0px 50px 30px 50px;
-
-        h2 {
-          padding: 20px 0px;
-        }
+        padding: 60px 50px 60px 50px;
       }
     }
   }
 
   @media screen and (min-width: 768px) {
     height: 100vh;
+    max-height: ${({ theme }) => theme.maxHeight};
 
     .banner__content__wrapper {
       .banner__content {
         justify-content: center;
         margin-top: -40px;
-        /* padding: 0px 50px 30px 50px; */
 
         h2 {
-          padding: 0px;
+          font-size: clamp(16px, 6.5vw, 50px);
+          font-weight: 800;
+          max-width: 600px;
         }
       }
     }
@@ -145,9 +142,8 @@ const Wrapper = styled.div`
         margin-top: -60px;
 
         h2 {
-          font-size: clamp(1.2rem, 7vw, 6rem);
-          font-weight: 800;
-          max-width: 800px;
+          font-size: clamp(16px, 4.6vw, 70px);
+          max-width: 700px;
         }
       }
     }

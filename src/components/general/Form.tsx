@@ -148,10 +148,10 @@ const FormWrapper = styled.form<WrapperProp>`
     }
 
     small {
-      font-size: clamp(16px, 2vw, 20px);
+      font-size: clamp(16px, 1.2vw, 20px);
     }
     .icon {
-      font-size: clamp(16px, 2vw, 20px);
+      font-size: clamp(16px, 1.2vw, 20px);
     }
   }
 

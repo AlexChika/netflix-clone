@@ -156,7 +156,7 @@ const Wrapper = styled.div<{ $bg: string }>`
   }
 
   .icon {
-    font-size: clamp(1rem, 5vw, 2.5rem);
+    font-size: clamp(14px, 1.6vw, 25px);
     padding: 0;
   }
 

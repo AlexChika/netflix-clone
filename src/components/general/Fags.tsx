@@ -84,7 +84,7 @@ const Question = styled.div<QuestionProp>`
 
   p,
   span {
-    font-size: clamp(15px, 2.5vw, 20px);
+    font-size: clamp(18px, 2.6vw, 20px);
     font-weight: 400;
   }
 
@@ -115,7 +115,7 @@ const Question = styled.div<QuestionProp>`
 
     p,
     span {
-      font-size: clamp(16px, 2vw, 25px);
+      font-size: clamp(16px, 2.7vw, 25px);
     }
   }
 `;
@@ -130,9 +130,9 @@ const Answer = styled.div<AnswerProp>`
   transition: height 0.3s linear;
 
   p {
-    font-size: clamp(15px, 2vw, 18px);
+    font-size: clamp(15px, 2.2vw, 18px);
     text-align: left;
-    line-height: 3rem;
+    line-height: 35px;
     font-weight: 400;
     opacity: 0;
     transition: opacity 0.3s linear;

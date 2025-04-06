@@ -32,7 +32,7 @@ const Wrapper = styled.nav<WrapperProps>`
   width: 100%;
 
   .logo {
-    width: clamp(90px, 20vw, 140px);
+    width: clamp(90px, 8.9vw, 140px);
     cursor: pointer;
   }
 
@@ -42,7 +42,7 @@ const Wrapper = styled.nav<WrapperProps>`
     border-radius: 4px;
     padding: 8px 15px;
     color: inherit;
-    font-size: clamp(14px, 25vw, 16px);
+    font-size: clamp(14px, 0.95vw, 16px);
     transition: background-color 0.2s linear;
 
     &:hover {
