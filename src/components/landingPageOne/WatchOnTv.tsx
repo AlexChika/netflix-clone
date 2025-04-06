@@ -86,4 +86,8 @@ const Wrapper = styled.div`
       margin-bottom: 0px;
     }
   }
+
+  @media screen and (min-width: 1500px) {
+    gap: 60px;
+  }
 `;

@@ -19,7 +19,7 @@ export default LandingPageFour;
 
 const Wrapper = styled.div`
   /* general styles */
-  background: rgba(0, 8, 29, 1);
+  /* background: rgba(0, 8, 29, 1); */
 
   animation: fadeOut 1s linear;
 

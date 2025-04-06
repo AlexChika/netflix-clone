@@ -4,19 +4,13 @@ import { MdArrowForwardIos } from "react-icons/md";
 
 import styled from "styled-components";
 
-type DataProp = {
-  $data: {
-    inputEmail: string;
-    isEmailValid: { valid: boolean; errorText: string };
-    btnAlign: "center" | "flex-start";
-  };
-};
-
 type FormProp = {
   btnAlign?: "center" | "flex-start";
+  width?: "long" | "short";
 };
 
-const Form = ({ btnAlign = "flex-start" }: FormProp) => {
+const Form = (props: FormProp) => {
+  const { btnAlign = "flex-start", width = "short" } = props;
   const [inputEmail, setInputEmail] = useState("");
   const [isEmailValid, setIsEmailValid] = useState({
     valid: true,
@@ -42,18 +36,8 @@ const Form = ({ btnAlign = "flex-start" }: FormProp) => {
     return setIsEmailValid({ valid: false, errorText: "Email is required!" });
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    // TODO No 1.
-    // call alert telling user this is a demo
-    alert("This is a demo. You will not receive an email.");
-  }
-
   return (
-    <FormWrapper
-      onSubmit={handleSubmit}
-      $data={{ inputEmail, isEmailValid, btnAlign }}
-    >
+    <FormWrapper $data={{ inputEmail, isEmailValid, btnAlign, width }}>
       <div className="input">
         <label htmlFor="DemoEmail">Email address (Demo Only)</label>
         <input
@@ -70,18 +54,30 @@ const Form = ({ btnAlign = "flex-start" }: FormProp) => {
         </small>
       </div>
 
-      <button className="f items-center justify-center" type="submit">
-        Let's Get Started
+      <span className="f items-center justify-center">
+        <small>Let's Get Started</small>
         <MdArrowForwardIos className="icon" />
-      </button>
+      </span>
     </FormWrapper>
   );
 };
 
 export default Form;
 
-const FormWrapper = styled.form<DataProp>`
-  width: clamp(230px, 70vw, 600px);
+type WrapperProp = {
+  $data: {
+    inputEmail: string;
+    isEmailValid: { valid: boolean; errorText: string };
+    btnAlign: "center" | "flex-start";
+    width: "long" | "short";
+  };
+};
+
+const FormWrapper = styled.form<WrapperProp>`
+  width: ${({ $data }) =>
+    $data.width === "long"
+      ? "clamp(230px, 70vw, 800px)"
+      : "clamp(230px, 70vw, 600px)"};
   margin-top: 30px;
   text-align: left;
   display: flex;
@@ -96,10 +92,10 @@ const FormWrapper = styled.form<DataProp>`
       top: 50%;
       transform: translateY(-50%);
       left: 15px;
-      color: rgba(255, 255, 255, 0.8);
+      color: #ffffff;
       transition: all 0.3s linear;
-      visibility: ${({ $data }: DataProp) =>
-        $data.inputEmail ? "hidden" : "visible"};
+      visibility: ${({ $data }) => ($data.inputEmail ? "hidden" : "visible")};
+      font-weight: 500;
     }
 
     input {
@@ -120,7 +116,7 @@ const FormWrapper = styled.form<DataProp>`
       align-items: center;
       font-size: 14px;
       color: ${({ theme }) => theme.primaryRed};
-      visibility: ${({ $data }: DataProp) =>
+      visibility: ${({ $data }) =>
         $data.isEmailValid.valid ? "hidden" : "visible"};
     }
   }
@@ -132,19 +128,31 @@ const FormWrapper = styled.form<DataProp>`
     visibility: visible;
   }
 
-  button {
-    align-self: ${({ $data: { btnAlign } }: DataProp) => btnAlign};
+  span {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    align-self: ${({ $data: { btnAlign } }) => btnAlign};
     background-color: ${({ theme }) => theme.primaryRed};
     color: inherit;
     width: 160px;
     margin-top: 10px;
     height: 40px;
+    padding: 0px 10px;
     border-radius: 5px;
-    font-size: clamp(1.4rem, 2.5vw, 2rem);
-  }
+    transition: background-color 0.2s linear;
 
-  .icon {
-    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    &:hover {
+      background-color: ${({ theme }) => theme.hoverRed};
+    }
+
+    small {
+      font-size: clamp(16px, 2vw, 20px);
+    }
+    .icon {
+      font-size: clamp(16px, 2vw, 20px);
+    }
   }
 
   @media screen and (min-width: 640px) {
@@ -159,11 +167,14 @@ const FormWrapper = styled.form<DataProp>`
       }
     }
 
-    button {
+    span {
       margin-top: 0px;
       height: 60px;
       width: 300px;
-      font-weight: 900;
+
+      small {
+        font-weight: 900;
+      }
     }
   }
 `;

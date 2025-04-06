@@ -75,7 +75,7 @@ const Wrapper = styled.div`
       }
 
       h3 {
-        font-size: clamp(1rem, 5vw, 2rem);
+        font-size: clamp(10px, 5vw, 20px);
         max-width: 85%;
       }
     }
@@ -84,6 +84,7 @@ const Wrapper = styled.div`
   /* media queries */
   @media screen and (min-width: 768px) {
     height: 100vh;
+    max-height: ${({ theme }) => theme.maxHeight};
 
     .banner__content__wrapper {
       .banner__content {

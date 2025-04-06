@@ -26,13 +26,13 @@ export default LandingPageOne;
 const Wrapper = styled.div`
   /* general styles */
   h2 {
-    font-size: clamp(1.2rem, 8vw, 4.8rem);
+    font-size: clamp(12px, 8vw, 48px);
     max-width: 600px;
     font-weight: 700;
   }
 
   h3 {
-    font-size: clamp(1rem, 5vw, 2.5rem);
+    font-size: clamp(10px, 5vw, 25px);
     margin-top: 20px;
     max-width: 600px;
   }

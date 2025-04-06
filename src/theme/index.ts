@@ -1,29 +1,37 @@
 import { DefaultTheme, createGlobalStyle } from "styled-components";
 // few colors are not here beacuse they were used scantly
 const theme: DefaultTheme = {
-  primaryRed: "#e50914",
-  bg: "#000000",
+  primaryRed: "#e50914", // #e50914
+  bg: "#000000", // #000000
+  hoverRed: "#a90808", // #a90808
+  maxWidth: "1650px",
+  maxHeight: "1000px",
 };
 
 const GlobalStyle = createGlobalStyle`
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-weight:400;
--webkit-tap-highlight-color: transparent;
-font-family:Arial, Helvetica, sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-weight:400;
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 html {
-font-size: 62.5%;
--webkit-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body{
-font-size: 1.6rem;
-background-color: black;
+background-color: white;
 direction: ltr;
+max-width: ${({ theme }) => theme.maxWidth};
+margin: 0 auto;
 }
 
 img{
