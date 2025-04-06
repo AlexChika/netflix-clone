@@ -82,6 +82,7 @@ const FormWrapper = styled.form<WrapperProp>`
   text-align: left;
   display: flex;
   flex-direction: column;
+  gap: ${({ $data }) => ($data.isEmailValid.valid ? "0px" : "25px")};
 
   .input {
     position: relative;

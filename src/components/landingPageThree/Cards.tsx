@@ -36,13 +36,13 @@ const Wrapper = styled.div`
   }
 
   h2 {
-    font-size: clamp(2.5rem, 4.5vw, 4.2rem);
+    font-size: clamp(25px, 2.74vw, 45px);
     max-width: 600px;
     font-weight: 800;
   }
 
   h3 {
-    font-size: clamp(1.5rem, 2.5vw, 1.8rem);
+    font-size: clamp(16px, 1.3vw, 20px);
     max-width: 600px;
     font-weight: 500;
     margin-top: 10px;

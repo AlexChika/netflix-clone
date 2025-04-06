@@ -26,7 +26,6 @@ const Banner = () => {
                 Ready to watch? Enter your email to create or restart your
                 membership.
               </h4>
-
               <Form />
             </div>
           </div>
@@ -79,21 +78,20 @@ const Wrapper = styled.div`
       height: calc(100% - 85px);
       max-width: 1065px;
       text-align: center;
-      padding: 0px 20px 20px 20px;
+      padding: 60px 20px 60px 20px;
 
       h2 {
         max-width: 800px;
-        font-size: clamp(1.2rem, 5.5vw, 5rem);
+        font-size: clamp(35px, 4vw, 70px);
         text-align: left;
         font-weight: 600;
-        margin-bottom: 15px;
-        max-width: 600;
+        max-width: 400px;
       }
 
       h3 {
-        font-size: clamp(1rem, 5vw, 2.3rem);
+        font-size: clamp(18px, 2vw, 30px);
         text-align: left;
-        margin-top: 10px;
+        margin-top: 25px;
         max-width: max-content;
       }
     }
@@ -102,6 +100,7 @@ const Wrapper = styled.div`
       max-width: 1065px;
       width: 100%;
       margin: 0 auto;
+      padding: 12px 0px;
       margin-top: 25px;
       background: linear-gradient(0deg, rgba(0, 8, 29, 1), rgba(0, 8, 29, 1))
           padding-box,
@@ -116,7 +115,7 @@ const Wrapper = styled.div`
       border-radius: 8px;
 
       h4 {
-        font-size: clamp(0.9rem, 5vw, 1.9rem);
+        font-size: clamp(15px, 1.2vw, 20px);
         text-align: left;
         max-width: max-content;
       }
@@ -133,11 +132,7 @@ const Wrapper = styled.div`
   @media screen and (min-width: 600px) {
     .banner__content__wrapper {
       .banner__content {
-        padding: 0px 50px 30px 50px;
-
-        h2 {
-          padding: 20px 0px;
-        }
+        padding: 60px 50px 60px 50px;
       }
 
       .form__wrapper {
@@ -148,15 +143,15 @@ const Wrapper = styled.div`
 
   @media screen and (min-width: 768px) {
     height: 100vh;
+    max-height: ${({ theme }) => theme.maxHeight};
 
     .banner__content__wrapper {
       .banner__content {
         justify-content: center;
         margin-top: -40px;
-        /* padding: 0px 50px 30px 50px; */
 
         h2 {
-          padding: 0px;
+          max-width: 600px;
         }
       }
     }
@@ -177,9 +172,9 @@ const Wrapper = styled.div`
         margin-top: -60px;
 
         h2 {
-          font-size: clamp(1.2rem, 7vw, 6rem);
+          /* font-size: clamp(20px, 4.5vw, 600px); */
           font-weight: 800;
-          max-width: 800;
+          max-width: 650px;
         }
       }
     }
