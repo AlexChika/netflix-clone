@@ -33,7 +33,7 @@ function Fags({ faq: { question, answer }, bg, hover }: FaqProps) {
     function call() {
       if (ParagraphRef.current)
         setHeight(
-          `${ParagraphRef.current.getBoundingClientRect().height + 50}px`
+          `${ParagraphRef.current.getBoundingClientRect().height + 60}px`
         );
     }
 
@@ -84,7 +84,7 @@ const Question = styled.div<QuestionProp>`
 
   p,
   span {
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-size: clamp(15px, 2.5vw, 20px);
     font-weight: 400;
   }
 
@@ -115,7 +115,7 @@ const Question = styled.div<QuestionProp>`
 
     p,
     span {
-      font-size: clamp(1.6rem, 2vw, 2.5rem);
+      font-size: clamp(16px, 2vw, 25px);
     }
   }
 `;
@@ -130,7 +130,7 @@ const Answer = styled.div<AnswerProp>`
   transition: height 0.3s linear;
 
   p {
-    font-size: clamp(1.5rem, 2vw, 1.8rem);
+    font-size: clamp(15px, 2vw, 18px);
     text-align: left;
     line-height: 3rem;
     font-weight: 400;
@@ -164,7 +164,7 @@ const Answer = styled.div<AnswerProp>`
     }
 
     p {
-      font-size: 2rem;
+      font-size: 20px;
     }
   }
 `;

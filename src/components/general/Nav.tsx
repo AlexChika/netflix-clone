@@ -1,9 +1,13 @@
 import styled from "styled-components";
 import { NetflixLogo } from "../../utils/icons";
 
-const Nav = () => {
+type Props = {
+  compact?: boolean;
+};
+
+const Nav = ({ compact }: Props) => {
   return (
-    <Wrapper className="landing__page__nav">
+    <Wrapper $compact={compact} className="landing__page__nav">
       <span>
         <NetflixLogo class="logo" color="#e50914" />
       </span>
@@ -15,7 +19,11 @@ const Nav = () => {
 
 export default Nav;
 
-const Wrapper = styled.nav`
+type WrapperProps = {
+  $compact?: boolean;
+};
+
+const Wrapper = styled.nav<WrapperProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,7 +32,7 @@ const Wrapper = styled.nav`
   width: 100%;
 
   .logo {
-    width: clamp(9rem, 20vw, 14rem);
+    width: clamp(90px, 20vw, 140px);
     cursor: pointer;
   }
 
@@ -34,7 +42,12 @@ const Wrapper = styled.nav`
     border-radius: 4px;
     padding: 8px 15px;
     color: inherit;
-    font-size: clamp(1.4rem, 25vw, 1.6rem);
+    font-size: clamp(14px, 25vw, 16px);
+    transition: background-color 0.2s linear;
+
+    &:hover {
+      background-color: ${({ theme }) => theme.hoverRed};
+    }
   }
 
   @media screen and (min-width: 768px) {
@@ -42,6 +55,6 @@ const Wrapper = styled.nav`
   }
 
   @media screen and (min-width: 1200px) {
-    padding: 40px 70px;
+    padding: ${({ $compact }) => ($compact ? "50px 140px" : "50px 70px")};
   }
 `;

@@ -57,4 +57,8 @@ const Wrapper = styled.div`
       order: 1;
     }
   }
+
+  @media screen and (min-width: 1500px) {
+    gap: 60px;
+  }
 `;
