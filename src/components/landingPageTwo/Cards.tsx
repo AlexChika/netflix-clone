@@ -30,13 +30,13 @@ const Wrapper = styled.div`
   color: white;
 
   h2 {
-    font-size: clamp(1.2rem, 4vw, 2.5rem);
+    font-size: clamp(18px, 1.5vw, 26px);
     max-width: 600px;
     font-weight: 500;
   }
 
   h3 {
-    font-size: clamp(0.9rem, 2vw, 1.5rem);
+    font-size: clamp(14px, 1.1vw, 17px);
     margin-top: 10px;
     max-width: 600px;
   }
@@ -77,5 +77,12 @@ const Wrapper = styled.div`
     margin-bottom: 50px;
     margin-top: -60px;
     padding: 0px;
+  }
+
+  @media screen and (min-width: 1500px) {
+    max-width: 1400px;
+    section {
+      gap: 30px;
+    }
   }
 `;

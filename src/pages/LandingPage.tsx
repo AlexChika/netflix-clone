@@ -6,7 +6,7 @@ import LandingPageFour from "../components/landingPageFour/LandingPageFour";
 const LandingPage = ({ page }: { page: number }) => {
   return (
     <>
-      <LandingPageTwo />
+      <LandingPageThree />
     </>
   );
 

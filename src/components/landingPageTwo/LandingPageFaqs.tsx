@@ -34,7 +34,7 @@ const Wrapper = styled.div`
 
   .heading {
     margin-bottom: 20px;
-    font-size: clamp(1.8rem, 5vw, 4rem);
+    font-size: clamp(18px, 2.4vw, 40px);
     font-weight: 800;
   }
 
