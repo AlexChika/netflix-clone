@@ -313,11 +313,11 @@ const CarouselWrapper = styled.div<WrapperProp>`
 
   .tail {
     position: relative;
-    max-width: 672px; /* Equivalent to max-w-2xl */
-    margin-top: -34px; /* Equivalent to -mt-16 */
-    margin-bottom: 36px; /* Equivalent to mb-9 */
-    border-bottom: 3px solid #cbd5e1; /* Equivalent to border-b-slate-300 & border-b-[3px] */
-    padding-top: 44px; /* Default py-11 */
+    max-width: 672px;
+    margin-top: -34px;
+    margin-bottom: 36px;
+    border-bottom: 3px solid #cbd5e1;
+    padding-top: 44px;
     padding-bottom: 44px;
     width: 100%;
     height: 100%;
@@ -333,11 +333,11 @@ const CarouselWrapper = styled.div<WrapperProp>`
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      height: 28px; /* Equivalent to h-7 */
-      width: 28px; /* Equivalent to w-7 */
-      background-color: #cbd5e1; /* Equivalent to bg-slate-300 */
-      color: black; /* Equivalent to text-black */
-      font-size: 12px; /* Equivalent to text-xs */
+      height: 28px;
+      width: 28px;
+      background-color: #cbd5e1;
+      color: black;
+      font-size: 12px;
     }
   }
 
@@ -350,6 +350,7 @@ const CarouselWrapper = styled.div<WrapperProp>`
     max-width: 672px;
     height: 176px;
     color: white;
+    cursor: grab;
 
     .image_wrap {
       position: absolute;
