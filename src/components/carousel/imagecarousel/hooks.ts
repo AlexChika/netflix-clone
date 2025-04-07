@@ -77,14 +77,31 @@ const defaultSwipeData: SwipeData = {
   vector: { start: { x: -1, y: -1 }, end: { x: -1, y: -1 } },
 };
 
+// could take onSwipeStart, onSwipe and OnswipeEnd funcs too
 function useSwipe(ref: Ref, threshold = 100) {
   const [data, setData] = useState(defaultSwipeData);
   const swipeStartPos = useRef(defaultSwipeData.vector.start);
+
+  const updateCursor = useCallback(
+    function (type: "start" | "end") {
+      if (!ref.current) return;
+      if (type === "start") {
+        ref.current.style.cursor = "grabbing";
+      } else {
+        ref.current.style.cursor = "grab";
+      }
+    },
+    [ref]
+  );
+
+  // could handle onSwipe here
+  // const handleSwipe = useCallback(function () {}, []);
 
   const handleSwipeEnd = useCallback(
     function (e: MouseEvent | TouchEvent) {
       const { x: startX, y: startY } = swipeStartPos.current;
       const { x: endX, y: endY, type } = getCoordinates(e, "end");
+      updateCursor("end");
 
       if (endX == null || endY == null) return;
 
@@ -121,16 +138,18 @@ function useSwipe(ref: Ref, threshold = 100) {
         document.removeEventListener("touchcancel", handleSwipeEnd);
       }
     },
-    [threshold]
+    [threshold, updateCursor]
   );
 
   const handleStart = useCallback(
     function (e: MouseEvent | TouchEvent) {
       const { type, x, y } = getCoordinates(e);
       swipeStartPos.current = { x, y };
+      updateCursor("start");
 
       if (type === "mouse") {
         e.preventDefault();
+
         document.addEventListener("mouseup", handleSwipeEnd);
       } else {
         document.addEventListener("touchend", handleSwipeEnd);

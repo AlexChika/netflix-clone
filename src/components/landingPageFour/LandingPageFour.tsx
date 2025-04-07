@@ -3,14 +3,16 @@ import Banner from "./Banner";
 // import Cards from "./Cards";
 // import LandingPageFaqs from "./LandingPageFaqs";
 import Footer from "../general/Footer";
+import CurveUi from "./CurveUi";
 
 function LandingPageFour() {
   return (
     <Wrapper>
       <Banner />
+      <CurveUi />
       {/* <Cards /> */}
       {/* <LandingPageFaqs /> */}
-      <Footer />
+      <Footer bg="#000000" />
     </Wrapper>
   );
 }

@@ -32,7 +32,7 @@ const Wrapper = styled.nav<WrapperProps>`
   width: 100%;
 
   .logo {
-    width: clamp(90px, 8.9vw, 140px);
+    width: clamp(90px, 8.95vw, 160px);
     cursor: pointer;
   }
 

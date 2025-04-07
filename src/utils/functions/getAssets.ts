@@ -16,6 +16,12 @@ import WatchEveryWhereImage2 from "../../assets/landingPageTwo/watch-everywhere-
 import ChildrenProfileImage2 from "../../assets/landingPageTwo/children-profile-image.png";
 import DownloadOfflineImage2 from "../../assets/landingPageTwo/download-offline-image.png";
 
+// landing pages 3
+// uses same assets as landing page 2
+
+//landing pages 4
+import BannerImage4 from "../../assets/landingPageFour/banner-hero-image.png";
+
 function getAssets() {
   return {
     // landing pages 1
@@ -35,6 +41,12 @@ function getAssets() {
     WatchEveryWhereImage2,
     ChildrenProfileImage2,
     DownloadOfflineImage2,
+
+    // landing pages 3
+    // uses same assets as landing page 2
+
+    //landing pages 4
+    BannerImage4,
   };
 }
 

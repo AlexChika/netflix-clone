@@ -1,4 +1,4 @@
-import { memo, useEffect, useRef, useState } from "react";
+import { memo, useRef, useState } from "react";
 import useDrag from "./useDrag";
 import styled from "styled-components";
 import { createPortal } from "react-dom";
@@ -16,10 +16,6 @@ function Carousel(props: Props) {
   const [isOpen, setIsOpen] = useState(open);
   const ballRef = useRef<HTMLDivElement>(null);
   useDrag(ballRef, handleOpenCloseModal);
-
-  useEffect(() => {
-    console.log("rendered");
-  });
 
   function handleOpenCloseModal(action = "open") {
     if (action === "close") {
