@@ -4,14 +4,17 @@ import Banner from "./Banner";
 // import LandingPageFaqs from "./LandingPageFaqs";
 import Footer from "../general/Footer";
 import CurveUI from "./CurvedUI";
+import TrendingNow from "./TrendingNow";
+import LandingPageFaqs from "./LandingPageFaqs";
 
 function LandingPageFour() {
   return (
     <Wrapper>
       <Banner />
       <CurveUI />
+      <TrendingNow />
       {/* <Cards /> */}
-      {/* <LandingPageFaqs /> */}
+      <LandingPageFaqs />
       <Footer bg="#000000" />
     </Wrapper>
   );
