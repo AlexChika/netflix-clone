@@ -68,5 +68,5 @@ const Button = styled.button`
   top: 5px;
   right: -25px;
   opacity: 0.8;
-  color: var(--ball-color);
+  color: red;
 `;

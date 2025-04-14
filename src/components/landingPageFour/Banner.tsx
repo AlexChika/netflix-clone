@@ -35,15 +35,14 @@ const Banner = () => {
 
 export default Banner;
 const Wrapper = styled.div`
+  height: calc(100vh - var(--curve-height));
   position: relative;
-  // 150px is the height of the Curve
-  height: calc(100vh - 150px);
-  max-height: 650px;
+  max-height: 620px;
   min-height: 570px;
 
   .banner__image__wrapper {
     position: absolute;
-    z-index: -1;
+    z-index: 1;
     top: 0;
     left: 0;
     right: 0;
@@ -55,6 +54,8 @@ const Wrapper = styled.div`
   }
 
   .banner__content__wrapper {
+    position: relative;
+    z-index: 2;
     color: white;
     background: linear-gradient(
       7deg,
@@ -104,9 +105,6 @@ const Wrapper = styled.div`
 
   /* media queries */
   @media screen and (min-width: 768px) {
-    height: 100vh;
-    max-height: ${({ theme }) => theme.maxHeight};
-
     .banner__content__wrapper {
       .banner__content {
         justify-content: center;
@@ -115,6 +113,9 @@ const Wrapper = styled.div`
   }
 
   @media screen and (min-width: 1000px) {
+    height: calc(100vh - var(--half-curve-height));
+    max-height: ${({ theme }) => theme.maxHeight};
+
     .banner__content__wrapper {
       .banner__content {
         h2 {

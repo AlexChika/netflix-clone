@@ -3,13 +3,13 @@ import Banner from "./Banner";
 // import Cards from "./Cards";
 // import LandingPageFaqs from "./LandingPageFaqs";
 import Footer from "../general/Footer";
-import CurveUi from "./CurveUi";
+import CurveUI from "./CurvedUI";
 
 function LandingPageFour() {
   return (
     <Wrapper>
       <Banner />
-      <CurveUi />
+      <CurveUI />
       {/* <Cards /> */}
       {/* <LandingPageFaqs /> */}
       <Footer bg="#000000" />
@@ -21,8 +21,10 @@ export default LandingPageFour;
 
 const Wrapper = styled.div`
   /* general styles */
-  /* background: rgba(0, 8, 29, 1); */
-
+  --curve-height: clamp(60px, 8vw, 65px);
+  --half-curve-height: calc(var(--curve-height) / 2);
+  --quarter-curve-height: calc(var(--curve-height) / 4);
+  background-color: black;
   animation: fadeOut 1s linear;
 
   @keyframes fadeOut {
@@ -32,5 +34,9 @@ const Wrapper = styled.div`
     to {
       opacity: 1;
     }
+  }
+
+  @media screen and (min-width: 1000px) {
+    --curve-height: 6.5vw;
   }
 `;

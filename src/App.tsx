@@ -12,7 +12,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <LandingPage page={page} />
-      <Carousel setPage={setPage} open={false} />
+      <Carousel setPage={setPage} open={true} />
     </ThemeProvider>
   );
 }
