@@ -72,13 +72,14 @@ const CurveContentContainer = styled.article`
   display: flex;
   flex-direction: column;
   z-index: 5;
-  width: 95%;
-  max-width: 1100px;
+  width: 100%;
+  padding: 0px 20px;
+  max-width: 1065px;
   margin: 0 auto;
   color: white;
-  margin-top: calc(var(--quarter-curve-height) * -1);
-  filter: drop-shadow(0px -10px 8px black);
+  margin-top: calc(var(--curve-height) * -1);
   transition: scale 0.3s linear;
+  filter: drop-shadow(0px -10px 8px black);
 
   &:hover {
     scale: 1.02;
@@ -146,6 +147,7 @@ const CurveContentContainer = styled.article`
   }
 
   @media screen and (min-width: 600px) {
+    margin-top: calc(var(--quarter-curve-height) * -1);
     flex-direction: row;
     gap: 10px;
 

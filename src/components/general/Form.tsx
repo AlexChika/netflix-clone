@@ -76,7 +76,7 @@ type WrapperProp = {
 const FormWrapper = styled.form<WrapperProp>`
   width: ${({ $data }) =>
     $data.width === "long"
-      ? "clamp(230px, 70vw, 800px)"
+      ? "clamp(230px, 90vw, 800px)"
       : "clamp(230px, 70vw, 600px)"};
   margin-top: 30px;
   text-align: left;
