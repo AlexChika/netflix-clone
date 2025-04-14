@@ -4,11 +4,11 @@ import LandingPageThree from "../components/landingPageThree/LandingPageThree";
 import LandingPageFour from "../components/landingPageFour/LandingPageFour";
 
 const LandingPage = ({ page }: { page: number }) => {
-  // return (
-  //   <>
-  //     <LandingPageFour />
-  //   </>
-  // );
+  return (
+    <>
+      <LandingPageFour />
+    </>
+  );
 
   return (
     <>
@@ -17,11 +17,8 @@ const LandingPage = ({ page }: { page: number }) => {
       {page === 1 && <LandingPageTwo />}
 
       {page === 2 && <LandingPageThree />}
-    </>
-  );
-  return (
-    <>
-      <LandingPageFour />
+
+      {page === 3 && <LandingPageFour />}
     </>
   );
 };

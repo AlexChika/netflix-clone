@@ -28,45 +28,45 @@ html {
 }
 
 body{
-background-color: white;
-direction: ltr;
-max-width: ${({ theme }) => theme.maxWidth};
-margin: 0 auto;
+  background-color: white;
+  direction: ltr;
+  max-width: ${({ theme }) => theme.maxWidth};
+  margin: 0 auto;
 }
 
 img{
-      width:100%;
-      height:100%
+  width:100%;
+  height:100%
 }
 
 button,input,a{
-border:none;
-outline:none;
-background-color:transparent;
-cursor: pointer;
-text-decoration:none;
-color:inherit;
+  border:none;
+  outline:none;
+  background-color:transparent;
+  cursor: pointer;
+  text-decoration:none;
+  color:inherit;
 }
 
 
     /* utilities */
 .hide__scroll__bar::-webkit-scrollbar {
--webkit-appearance: none;
-appearance: none;
-display: none;
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
 }
 
 .f{
-display:flex;
+  display:flex;
 }
 .justify-center{
-justify-content:center;
+  justify-content:center;
 }
 .items-center{
-align-items:center;
+  align-items:center;
 }
 .center{
-margin:0 auto;
+  margin:0 auto;
 }
 
 
