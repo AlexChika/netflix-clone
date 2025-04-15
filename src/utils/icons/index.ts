@@ -4,3 +4,7 @@ export { default as TvIcon } from "./TvIcon";
 export { default as DownloadIcon } from "./DownloadIcon";
 export { default as WatchEverywhereIcon } from "./WatchEverywhereIcon";
 export { default as ProfileForChildrenIcon } from "./ProfileForChildrenIcon";
+export { default as CancelSwitchIcon } from "./CancelSwitchIcon";
+export { default as PlaceForKidsIcon } from "./PlaceForKidsIcon";
+export { default as WatchFavoriteIcon } from "./WatchFavoriteIcon";
+export { default as TailoredToTasteIcon } from "./TailoredToTasteIcon";

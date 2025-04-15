@@ -4,13 +4,14 @@ import Footer from "../general/Footer";
 import LandingPageFaqs from "./LandingPageFaqs";
 import MoreReasonsToJoin from "./MoreReasonsToJoin";
 import GradientWrapper from "./GradientWrapper";
+import TrendingNow from "./TrendingNow";
 
 function LandingPageFive() {
   return (
     <Wrapper>
       <GradientWrapper>
         <Banner />
-        {/* <TrendingNow /> */}
+        <TrendingNow />
         <MoreReasonsToJoin />
       </GradientWrapper>
 
