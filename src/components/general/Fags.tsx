@@ -22,9 +22,16 @@ type FaqProps = {
   faq: Faq;
   bg?: string;
   hover?: string;
+  width?: "auto" | "full";
 };
 
-function Fags({ faq: { question, answer }, bg, hover }: FaqProps) {
+function Fags(faqProps: FaqProps) {
+  const {
+    faq: { question, answer },
+    bg,
+    hover,
+    width = "auto",
+  } = faqProps;
   const [show, setShow] = useState(false);
   const [height, setHeight] = useState("");
   const ParagraphRef = useRef<null | HTMLParagraphElement>(null);
@@ -45,7 +52,7 @@ function Fags({ faq: { question, answer }, bg, hover }: FaqProps) {
 
   //  .........
   return (
-    <FagsWrapper>
+    <FagsWrapper $width={width}>
       <Question
         $show={show}
         $bg={bg}
@@ -169,8 +176,9 @@ const Answer = styled.div<AnswerProp>`
   }
 `;
 
-const FagsWrapper = styled.div`
-  width: clamp(270px, 100%, 1065px);
+const FagsWrapper = styled.div<{ $width: "auto" | "full" }>`
+  width: ${({ $width }) =>
+    $width === "auto" ? "clamp(270px, 100%, 1065px)" : "100%"};
   margin: 0 auto;
   margin-bottom: 10px;
 `;

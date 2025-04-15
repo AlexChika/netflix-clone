@@ -4,7 +4,7 @@ const theme: DefaultTheme = {
   primaryRed: "#e50914", // #e50914
   bg: "#000000", // #000000
   hoverRed: "#a90808", // #a90808
-  maxWidth: "1650px",
+  maxWidth: "1600px",
   maxHeight: "1000px",
 };
 
