@@ -25,8 +25,6 @@ async function asyncGetImages() {
 
 const images = arrayShuffle(await asyncGetImages()).slice(0, 15);
 
-console.log({ images });
-
 function TrendingNow() {
   const id = "jdsjsikfnuo878";
   const maxItems = 15;
@@ -81,7 +79,6 @@ function TrendingNow() {
       if (width >= 500) scrollBy = 3;
       if (width >= 768) scrollBy = 4;
       if (width >= 1000) scrollBy = 5;
-      console.log({ width });
       scrollRef.current.scrollBy = scrollBy;
     }
 
@@ -135,12 +132,13 @@ const Wrapper = styled.div`
   color: white;
   margin: 0 auto;
   padding: 0px 20px;
-  max-width: 1065px;
+  max-width: 1200px;
   margin-top: 50px;
 
   .heading {
     font-size: clamp(18px, 1.5vw, 26px);
     margin-bottom: 17px;
+    font-weight: 700;
   }
 
   .carousel__wrapper {

@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     async function startImageLoading() {
       const allLoaded = await loadImages(imgSrcs);
-      console.log({ allLoaded });
+
       if (allLoaded) {
         setShowCarousel(allLoaded);
         return;

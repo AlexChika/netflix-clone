@@ -74,7 +74,7 @@ const CurveContentContainer = styled.article`
   z-index: 5;
   width: 100%;
   padding: 0px 20px;
-  max-width: 1065px;
+  max-width: 1200px;
   margin: 0 auto;
   color: white;
   margin-top: calc(var(--curve-height) * -1);
