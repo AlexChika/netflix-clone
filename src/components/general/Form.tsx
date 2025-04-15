@@ -7,10 +7,17 @@ import styled from "styled-components";
 type FormProp = {
   btnAlign?: "center" | "flex-start";
   width?: "long" | "short";
+  rounded?: "sm" | "lg";
+  type?: "normal" | "shade";
 };
 
 const Form = (props: FormProp) => {
-  const { btnAlign = "flex-start", width = "short" } = props;
+  const {
+    type = "normal",
+    rounded = "sm",
+    btnAlign = "flex-start",
+    width = "short",
+  } = props;
   const [inputEmail, setInputEmail] = useState("");
   const [isEmailValid, setIsEmailValid] = useState({
     valid: true,
@@ -37,7 +44,9 @@ const Form = (props: FormProp) => {
   }
 
   return (
-    <FormWrapper $data={{ inputEmail, isEmailValid, btnAlign, width }}>
+    <FormWrapper
+      $data={{ inputEmail, isEmailValid, btnAlign, width, rounded, type }}
+    >
       <div className="input">
         <label htmlFor="DemoEmail">Email address (Demo Only)</label>
         <input
@@ -70,6 +79,8 @@ type WrapperProp = {
     isEmailValid: { valid: boolean; errorText: string };
     btnAlign: "center" | "flex-start";
     width: "long" | "short";
+    rounded: "lg" | "sm";
+    type: "normal" | "shade";
   };
 };
 
@@ -92,19 +103,24 @@ const FormWrapper = styled.form<WrapperProp>`
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      left: 15px;
-      color: #ffffff;
+      left: ${({ $data }) => ($data.type === "normal" ? "15px" : "20px")};
+      color: #bcbcbc;
       transition: all 0.3s linear;
       visibility: ${({ $data }) => ($data.inputEmail ? "hidden" : "visible")};
       font-weight: 500;
+      z-index: 1;
     }
 
     input {
       width: 100%;
       height: 50px;
-      background-color: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      border-radius: 5px;
+      background-color: ${({ $data }) =>
+        $data.type === "normal" ? "rgba(0, 0, 0, 0.5)" : "#3a3a3a"};
+      border: 1px solid
+        ${({ $data }) =>
+          $data.type === "normal" ? "rgba(255, 255, 255, 0.6)" : "#676767"};
+      border-radius: ${({ $data }) =>
+        $data.rounded === "sm" ? "5px" : "30px"};
       font-size: 16px;
       padding: 0px 15px;
       position: relative;
@@ -141,7 +157,7 @@ const FormWrapper = styled.form<WrapperProp>`
     margin-top: 10px;
     height: 40px;
     padding: 0px 10px;
-    border-radius: 5px;
+    border-radius: ${({ $data }) => ($data.rounded === "sm" ? "5px" : "30px")};
     transition: background-color 0.2s linear;
 
     &:hover {

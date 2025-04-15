@@ -23,6 +23,8 @@ type FaqProps = {
   bg?: string;
   hover?: string;
   width?: "auto" | "full";
+  questionClassName?: string;
+  answerClassName?: string;
 };
 
 function Fags(faqProps: FaqProps) {
@@ -30,6 +32,8 @@ function Fags(faqProps: FaqProps) {
     faq: { question, answer },
     bg,
     hover,
+    questionClassName,
+    answerClassName,
     width = "auto",
   } = faqProps;
   const [show, setShow] = useState(false);
@@ -54,6 +58,7 @@ function Fags(faqProps: FaqProps) {
   return (
     <FagsWrapper $width={width}>
       <Question
+        className={questionClassName}
         $show={show}
         $bg={bg}
         $hover={hover}
@@ -66,7 +71,11 @@ function Fags(faqProps: FaqProps) {
         </span>
       </Question>
 
-      <Answer $height={height} $bg={bg} className={show ? "show" : "hide"}>
+      <Answer
+        $height={height}
+        $bg={bg}
+        className={`${answerClassName} ${show ? "show" : "hide"}`}
+      >
         <p ref={ParagraphRef}>{answer}</p>
       </Answer>
     </FagsWrapper>

@@ -2,13 +2,14 @@ import LandingPageOne from "../components/landingPageOne/LandingPageOne";
 import LandingPageTwo from "../components/landingPageTwo/LandingPageTwo";
 import LandingPageThree from "../components/landingPageThree/LandingPageThree";
 import LandingPageFour from "../components/landingPageFour/LandingPageFour";
+import LandingPageFive from "../components/landingPageFive/LandingPageFive";
 
 const LandingPage = ({ page }: { page: number }) => {
-  // return (
-  //   <>
-  //     <LandingPageFour />
-  //   </>
-  // );
+  return (
+    <>
+      <LandingPageFive />
+    </>
+  );
 
   return (
     <>
@@ -19,6 +20,8 @@ const LandingPage = ({ page }: { page: number }) => {
       {page === 2 && <LandingPageThree />}
 
       {page === 3 && <LandingPageFour />}
+
+      {page === 4 && <LandingPageFive />}
     </>
   );
 };

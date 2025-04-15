@@ -22,6 +22,8 @@ import DownloadOfflineImage2 from "../../assets/landingPageTwo/download-offline-
 //landing pages 4
 import BannerImage4 from "../../assets/landingPageFour/banner-hero-image.png";
 
+// landing pages 5
+
 function getAssets() {
   return {
     // landing pages 1
