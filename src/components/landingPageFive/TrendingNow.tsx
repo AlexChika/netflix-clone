@@ -23,14 +23,14 @@ async function asyncGetImages() {
   return arr;
 }
 
-const images = arrayShuffle(await asyncGetImages()).slice(0, 15);
+const images = arrayShuffle(await asyncGetImages()).slice(0, 18);
 
 function TrendingNow() {
   const id = "jdsjsikfnuo878";
   const maxItems = 15;
   const leftBtnRef = useRef<null | HTMLButtonElement>(null);
   const rightBtnRef = useRef<null | HTMLButtonElement>(null);
-  const scrollRef = useRef({ scrollBy: 5, current: 0 });
+  const scrollRef = useRef({ scrollBy: 6, current: 0 });
 
   function scroll(dir?: "left" | "right") {
     if (!leftBtnRef.current || !rightBtnRef.current) return;
@@ -78,7 +78,7 @@ function TrendingNow() {
       if (width > 0) scrollBy = 2;
       if (width >= 500) scrollBy = 3;
       if (width >= 768) scrollBy = 4;
-      if (width >= 1000) scrollBy = 5;
+      if (width >= 1000) scrollBy = 6;
       scrollRef.current.scrollBy = scrollBy;
     }
 
@@ -176,7 +176,7 @@ const Wrapper = styled.div`
 
         .card__number {
           position: absolute;
-          bottom: 10%;
+          top: 10%;
           left: -1px;
           font-size: clamp(25px, 9vw, 80px);
           font-weight: 700;
@@ -195,10 +195,10 @@ const Wrapper = styled.div`
     top: 50%;
     transform: translateY(-50%);
     border-radius: 8px;
-    background-color: #424242;
+    background-color: #6d6d6d;
 
     &:hover {
-      background-color: #5e5e5e;
+      background-color: #6d6d6d7a;
     }
   }
 
@@ -236,8 +236,8 @@ const Wrapper = styled.div`
     .carousel__wrapper {
       .carousel {
         .card {
-          width: calc(100% / 5);
-          min-width: calc(100% / 5);
+          width: calc(100% / 6);
+          min-width: calc(100% / 6);
         }
       }
     }
