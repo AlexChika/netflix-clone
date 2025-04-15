@@ -357,6 +357,7 @@ const CarouselWrapper = styled.div<WrapperProp>`
       height: 100%;
       border-radius: 24px;
       transition: width 400ms linear;
+      border: 1px solid white;
     }
 
     img {

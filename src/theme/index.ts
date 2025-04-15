@@ -25,6 +25,9 @@ const GlobalStyle = createGlobalStyle`
 
 html {
   -webkit-text-size-adjust: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scrollbar-track-color: transparent;
 }
 
 body{
@@ -54,6 +57,12 @@ button,input,a{
   -webkit-appearance: none;
   appearance: none;
   display: none;
+}
+
+.hide__scroll__bar{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scrollbar-track-color: transparent;
 }
 
 .f{

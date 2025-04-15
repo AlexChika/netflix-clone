@@ -4,11 +4,11 @@ import LandingPageThree from "../components/landingPageThree/LandingPageThree";
 import LandingPageFour from "../components/landingPageFour/LandingPageFour";
 
 const LandingPage = ({ page }: { page: number }) => {
-  return (
-    <>
-      <LandingPageFour />
-    </>
-  );
+  // return (
+  //   <>
+  //     <LandingPageFour />
+  //   </>
+  // );
 
   return (
     <>
