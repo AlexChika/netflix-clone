@@ -34,7 +34,7 @@ async function getImages() {
 
   const arr: { id: number; src: string }[] = [];
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 4; i++) {
     arr.push({
       id: i + 1,
       src: await photo(i + 1),
@@ -156,7 +156,7 @@ function useSwipe(ref: Ref, threshold = 100) {
         document.addEventListener("touchcancel", handleSwipeEnd);
       }
     },
-    [handleSwipeEnd]
+    [handleSwipeEnd, updateCursor]
   );
 
   useEffect(() => {

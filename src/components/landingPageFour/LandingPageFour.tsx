@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import Banner from "./Banner";
-// import Cards from "./Cards";
-// import LandingPageFaqs from "./LandingPageFaqs";
 import Footer from "../general/Footer";
 import CurveUI from "./CurvedUI";
 import TrendingNow from "./TrendingNow";
 import LandingPageFaqs from "./LandingPageFaqs";
+import MoreReasonsToJoin from "./MoreReasonsToJoin";
 
 function LandingPageFour() {
   return (
@@ -13,7 +12,7 @@ function LandingPageFour() {
       <Banner />
       <CurveUI />
       <TrendingNow />
-      {/* <Cards /> */}
+      <MoreReasonsToJoin />
       <LandingPageFaqs />
       <Footer bg="#000000" />
     </Wrapper>
