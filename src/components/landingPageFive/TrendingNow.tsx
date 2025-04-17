@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
 import { arrayShuffle } from "../../utils/functions/functions";
@@ -23,14 +23,13 @@ async function asyncGetImages() {
   return arr;
 }
 
-const images = arrayShuffle(await asyncGetImages()).slice(0, 18);
-
 function TrendingNow() {
   const id = "8a9yhufsiy";
   const maxItems = 15;
   const leftBtnRef = useRef<null | HTMLButtonElement>(null);
   const rightBtnRef = useRef<null | HTMLButtonElement>(null);
   const scrollRef = useRef({ scrollBy: 6, current: 0 });
+  const [images, setImages] = useState<{ id: number; src: string }[]>([]);
 
   function scroll(dir?: "left" | "right") {
     if (!leftBtnRef.current || !rightBtnRef.current) return;
@@ -69,6 +68,15 @@ function TrendingNow() {
     allEl[nextID].scrollIntoView(scrollOption);
     scrollRef.current = { scrollBy, current: nextID };
   }
+
+  useEffect(() => {
+    async function call() {
+      const _images = arrayShuffle(await asyncGetImages()).slice(0, 18);
+      setImages(_images);
+    }
+
+    call();
+  }, []);
 
   useEffect(() => {
     function handleResize() {
