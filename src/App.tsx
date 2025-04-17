@@ -10,7 +10,7 @@ const images = getAssets();
 const imgSrcs = Object.values(images).filter((src) => src.at(-3) !== "m");
 
 function App() {
-  const [page, setPage] = useState(3);
+  const [page, setPage] = useState(4);
   const [showCarousel, setShowCarousel] = useState(false);
 
   useEffect(() => {
