@@ -14,9 +14,8 @@ function LandingPageFive() {
         <TrendingNow />
         <MoreReasonsToJoin />
       </GradientWrapper>
-
       <LandingPageFaqs />
-      <Footer bg="var(--general-bg)" />
+      <Footer bg="" />
     </Wrapper>
   );
 }
@@ -25,7 +24,7 @@ export default LandingPageFive;
 
 const Wrapper = styled.div`
   /* general styles */
-  --general-bg: #131010;
+  --general-bg: #111111;
   background-color: var(--general-bg);
   animation: fadeOut 1s linear;
 

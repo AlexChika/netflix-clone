@@ -3,11 +3,12 @@ import { NetflixLogo } from "../../utils/icons";
 
 type Props = {
   compact?: boolean;
+  theme?: "red" | "white";
 };
 
-const Nav = ({ compact }: Props) => {
+const Nav = ({ compact, theme = "red" }: Props) => {
   return (
-    <Wrapper $compact={compact} className="landing__page__nav">
+    <Wrapper $theme={theme} $compact={compact} className="landing__page__nav">
       <span>
         <NetflixLogo class="logo" color="#e50914" />
       </span>
@@ -21,6 +22,7 @@ export default Nav;
 
 type WrapperProps = {
   $compact?: boolean;
+  $theme?: "red" | "white";
 };
 
 const Wrapper = styled.nav<WrapperProps>`
@@ -38,15 +40,18 @@ const Wrapper = styled.nav<WrapperProps>`
 
   div {
     cursor: pointer;
-    background-color: ${({ theme }) => theme.primaryRed};
+    color: ${({ theme, $theme }) =>
+      $theme === "red" ? theme.primaryWhite : theme.primaryBlack};
+    background-color: ${({ theme, $theme }) =>
+      $theme === "red" ? theme.primaryRed : theme.primaryWhite};
     border-radius: 4px;
     padding: 8px 15px;
-    color: inherit;
     font-size: clamp(14px, 0.95vw, 16px);
     transition: background-color 0.2s linear;
 
     &:hover {
-      background-color: ${({ theme }) => theme.hoverRed};
+      background-color: ${({ theme, $theme }) =>
+        $theme === "red" ? theme.hoverRed : theme.hoverWhite};
     }
   }
 

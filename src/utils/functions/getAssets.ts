@@ -23,6 +23,7 @@ import DownloadOfflineImage2 from "../../assets/landingPageTwo/download-offline-
 import BannerImage4 from "../../assets/landingPageFour/banner-hero-image.png";
 
 // landing pages 5
+import BannerImage5 from "../../assets/landingPageFive/banner-hero-image.webp";
 
 function getAssets() {
   return {
@@ -49,6 +50,9 @@ function getAssets() {
 
     //landing pages 4
     BannerImage4,
+
+    // landing pages 5
+    BannerImage5,
   };
 }
 

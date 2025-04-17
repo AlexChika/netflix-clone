@@ -70,14 +70,16 @@ const Wrapper = styled.div`
   color: white;
   margin: 0 auto;
   padding: 0px 20px;
-  width: 87%;
+  width: 92%;
   max-width: 1200px;
   margin-top: 50px;
 
   .heading {
+    margin-bottom: 20px;
+    text-align: left;
     font-size: clamp(18px, 1.5vw, 26px);
-    margin-bottom: 17px;
-    font-weight: 700;
+    font-size: clamp(18px, 2.4vw, 40px);
+    font-weight: 800;
   }
 
   .icon {
@@ -122,6 +124,8 @@ const Wrapper = styled.div`
   }
 
   @media screen and (min-width: 1000px) {
+    width: 87%;
+
     .icon {
       width: 50px;
     }

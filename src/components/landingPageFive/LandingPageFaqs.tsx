@@ -11,6 +11,7 @@ const LandingPageFaqs = () => {
       {faqs.map((faq, ind) => {
         return (
           <Fags
+            wrapperClassName="faqs__wrapper"
             questionClassName="question"
             answerClassName="answer"
             width="full"
@@ -26,7 +27,7 @@ const LandingPageFaqs = () => {
         <h3>
           Ready to watch? Enter your email to create or restart your membership.
         </h3>
-        <Form type="shade" rounded="lg" />
+        <Form type="shade" rounded="lg" btnAlign="center" />
       </div>
     </Wrapper>
   );
@@ -40,15 +41,20 @@ const Wrapper = styled.div`
   text-align: center;
   height: max-content;
   padding: 50px 20px;
-  width: 87%;
+  width: 92%;
   max-width: 1200px;
   margin: 0 auto;
 
   .heading {
-    margin: 0 auto;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     text-align: left;
     font-size: clamp(18px, 1.5vw, 26px);
+    font-size: clamp(18px, 2.4vw, 40px);
+    font-weight: 800;
+  }
+
+  .faqs__wrapper {
+    margin-bottom: 5px;
   }
 
   .question {
@@ -58,7 +64,7 @@ const Wrapper = styled.div`
 
   .answer {
     border-radius: 20px;
-    margin-top: 7px;
+    margin-top: 5px;
   }
 
   .faq__footer {
@@ -72,5 +78,9 @@ const Wrapper = styled.div`
       margin-top: 60px !important ;
       font-weight: 600;
     }
+  }
+
+  @media screen and (min-width: 1000px) {
+    width: 87%;
   }
 `;

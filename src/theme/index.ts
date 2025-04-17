@@ -2,8 +2,11 @@ import { DefaultTheme, createGlobalStyle } from "styled-components";
 // few colors are not here beacuse they were used scantly
 const theme: DefaultTheme = {
   primaryRed: "#e50914", // #e50914
+  primaryWhite: "#ffffff", // #ffffff
+  primaryBlack: "#000000", // #000000
   bg: "#000000", // #000000
   hoverRed: "#a90808", // #a90808
+  hoverWhite: "#c6c6c6", // #c6c6c6
   maxWidth: "1600px",
   maxHeight: "1000px",
 };
