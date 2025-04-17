@@ -25,6 +25,7 @@ type FaqProps = {
   width?: "auto" | "full";
   questionClassName?: string;
   answerClassName?: string;
+  wrapperClassName?: string;
 };
 
 function Fags(faqProps: FaqProps) {
@@ -34,6 +35,7 @@ function Fags(faqProps: FaqProps) {
     hover,
     questionClassName,
     answerClassName,
+    wrapperClassName,
     width = "auto",
   } = faqProps;
   const [show, setShow] = useState(false);
@@ -56,7 +58,7 @@ function Fags(faqProps: FaqProps) {
 
   //  .........
   return (
-    <FagsWrapper $width={width}>
+    <FagsWrapper className={wrapperClassName} $width={width}>
       <Question
         className={questionClassName}
         $show={show}

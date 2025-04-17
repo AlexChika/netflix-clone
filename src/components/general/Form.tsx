@@ -122,7 +122,7 @@ const FormWrapper = styled.form<WrapperProp>`
       border-radius: ${({ $data }) =>
         $data.rounded === "sm" ? "5px" : "30px"};
       font-size: 16px;
-      padding: 0px 15px;
+      padding: 0px ${({ $data }) => ($data.type === "normal" ? "15px" : "20px")};
       position: relative;
     }
 
@@ -147,16 +147,19 @@ const FormWrapper = styled.form<WrapperProp>`
 
   span {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 5px;
     align-items: center;
     cursor: pointer;
     align-self: ${({ $data: { btnAlign } }) => btnAlign};
     background-color: ${({ theme }) => theme.primaryRed};
     color: inherit;
-    width: 160px;
+    width: max-content;
+    white-space: nowrap;
     margin-top: 10px;
     height: 40px;
-    padding: 0px 10px;
+    /* padding: 0px 10px; */
+    padding: 0px ${({ $data }) => ($data.type === "normal" ? "10px" : "20px")};
     border-radius: ${({ $data }) => ($data.rounded === "sm" ? "5px" : "30px")};
     transition: background-color 0.2s linear;
 
@@ -187,7 +190,8 @@ const FormWrapper = styled.form<WrapperProp>`
     span {
       margin-top: 0px;
       height: 60px;
-      width: 300px;
+      /* width: max-content;
+      white-space: nowrap; */
 
       small {
         font-weight: 900;

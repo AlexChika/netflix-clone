@@ -7,12 +7,6 @@ import LandingPageFive from "../components/landingPageFive/LandingPageFive";
 const LandingPage = ({ page }: { page: number }) => {
   return (
     <>
-      <LandingPageFive />
-    </>
-  );
-
-  return (
-    <>
       {page === 0 && <LandingPageOne />}
 
       {page === 1 && <LandingPageTwo />}

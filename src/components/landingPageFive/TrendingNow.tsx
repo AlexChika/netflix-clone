@@ -26,7 +26,7 @@ async function asyncGetImages() {
 const images = arrayShuffle(await asyncGetImages()).slice(0, 18);
 
 function TrendingNow() {
-  const id = "jdsjsikfnuo878";
+  const id = "8a9yhufsiy";
   const maxItems = 15;
   const leftBtnRef = useRef<null | HTMLButtonElement>(null);
   const rightBtnRef = useRef<null | HTMLButtonElement>(null);
@@ -76,8 +76,9 @@ function TrendingNow() {
       let scrollBy = 0;
 
       if (width > 0) scrollBy = 2;
-      if (width >= 500) scrollBy = 3;
-      if (width >= 768) scrollBy = 4;
+      if (width >= 440) scrollBy = 3;
+      if (width >= 600) scrollBy = 4;
+      if (width >= 768) scrollBy = 5;
       if (width >= 1000) scrollBy = 6;
       scrollRef.current.scrollBy = scrollBy;
     }
@@ -132,13 +133,15 @@ const Wrapper = styled.div`
   color: white;
   margin: 0 auto;
   padding: 0px 20px;
+  width: 92%;
   max-width: 1200px;
-  margin-top: 50px;
+  margin-top: 20px;
 
   .heading {
+    text-align: left;
     font-size: clamp(18px, 1.5vw, 26px);
-    margin-bottom: 17px;
-    font-weight: 700;
+    font-size: clamp(18px, 2.4vw, 40px);
+    font-weight: 800;
   }
 
   .carousel__wrapper {
@@ -210,7 +213,7 @@ const Wrapper = styled.div`
     right: -15px;
   }
 
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 440px) {
     .carousel__wrapper {
       .carousel {
         .card {
@@ -221,7 +224,7 @@ const Wrapper = styled.div`
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 600px) {
     .carousel__wrapper {
       .carousel {
         .card {
@@ -232,7 +235,19 @@ const Wrapper = styled.div`
     }
   }
 
+  @media screen and (min-width: 768px) {
+    .carousel__wrapper {
+      .carousel {
+        .card {
+          width: calc(100% / 5);
+          min-width: calc(100% / 5);
+        }
+      }
+    }
+  }
+
   @media screen and (min-width: 1000px) {
+    width: 87%;
     .carousel__wrapper {
       .carousel {
         .card {

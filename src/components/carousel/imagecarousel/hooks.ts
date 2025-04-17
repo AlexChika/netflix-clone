@@ -34,7 +34,7 @@ async function getImages() {
 
   const arr: { id: number; src: string }[] = [];
 
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 5; i++) {
     arr.push({
       id: i + 1,
       src: await photo(i + 1),
