@@ -20,10 +20,10 @@ import DownloadOfflineImage2 from "../../assets/landingPageTwo/download-offline-
 // uses same assets as landing page 2
 
 //landing pages 4
-import BannerImage4 from "../../assets/landingPageFour/banner-hero-image.png";
+import BannerImage4 from "../../assets/landingPageFour/banner-hero-image.webp";
 
 // landing pages 5
-import BannerImage5 from "../../assets/landingPageFive/banner-hero-image.webp";
+import BannerImage5 from "../../assets/landingPageFive/banner-hero-image.png";
 
 function getAssets() {
   return {
@@ -48,10 +48,10 @@ function getAssets() {
     // landing pages 3
     // uses same assets as landing page 2
 
-    //landing pages 4
+    // landing pages 4
     BannerImage4,
 
-    // landing pages 5
+    //landing pages 5
     BannerImage5,
   };
 }

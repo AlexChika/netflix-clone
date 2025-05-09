@@ -5,134 +5,227 @@ import getAssets from "../../utils/functions/getAssets";
 
 const { BannerImage4 } = getAssets();
 
-const Banner = () => {
+function Banner() {
   return (
-    <Wrapper role="banner">
-      <div className="banner__image__wrapper">
-        <img src={BannerImage4} alt="landing page banner" />
-      </div>
+    <Wrapper>
+      <Nav theme="white" />
 
-      <div className="banner__content__wrapper">
-        <Nav compact />
+      <div className="banner">
+        <div className="banner__overlay__wrapper">
+          <div className="banner__overlay">
+            <div className="overlay"></div>
+            <img className="img" src={BannerImage4} alt="landing page banner" />
+          </div>
+        </div>
 
         <div className="banner__content">
           <div>
-            <h2>Unlimited films, TV programmes and more</h2>
+            <h2>Unlimited movies, TV shows, and more</h2>
 
-            <h3>Starts at £5.99. Cancel at any time.</h3>
+            <h3>Starts at ₦2,200. Cancel anytime.</h3>
             <h4>
               Ready to watch? Enter your email to create or restart your
               membership.
             </h4>
 
-            <Form btnAlign="center" />
+            <Form rounded="lg" type="shade" btnAlign="center" />
           </div>
         </div>
       </div>
     </Wrapper>
   );
-};
+}
 
 export default Banner;
+
 const Wrapper = styled.div`
-  height: calc(100vh - var(--curve-height));
+  width: 95%;
   position: relative;
-  max-height: 620px;
-  min-height: 570px;
+  height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  color: white;
 
-  .banner__image__wrapper {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  .landing__page__nav {
+    padding: 20px 0px;
+  }
 
-    img {
-      object-fit: cover;
+  .banner {
+    position: relative;
+    filter: drop-shadow(12px 16px 12px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(12px 16px 12px rgba(0, 0, 0, 0.904));
+  }
+
+  .banner__content {
+    position: relative;
+    height: 100vh;
+    max-height: 450px;
+
+    & > div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 30px;
+      max-width: 300px;
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: clamp(16px, 1.4vw, 22px);
+      margin-top: 20px;
+      max-width: 600px;
+      font-weight: 600;
+    }
+
+    h4 {
+      font-size: 16px;
+      margin-top: 20px;
     }
   }
 
-  .banner__content__wrapper {
-    position: relative;
-    z-index: 2;
-    color: white;
-    background: linear-gradient(
-      7deg,
-      rgba(0, 0, 0, 0.8) 30%,
-      rgba(0, 0, 0, 0.7) 53%,
-      rgba(0, 0, 0, 0.6) 97%
-    );
+  // parent
+  .banner__overlay__wrapper {
+    width: 100%;
     height: 100%;
+    inset: 0;
+    border-radius: 18px;
+    pointer-events: none;
+    mask-image: radial-gradient(
+      100% 10% at 50% 103%,
+      transparent 50%,
+      white 50%
+    );
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
     width: 100%;
 
-    .banner__content {
-      position: relative;
-      // 85px is the height of the Nav
-      height: calc(100% - 85px);
-
-      & > div {
-        position: absolute;
-        top: calc(50% - 42.5px); // considering nav height
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        text-align: center;
-      }
-
-      h2 {
-        font-size: 30px;
-        max-width: 300px;
-        font-weight: 700;
-      }
-
-      h3 {
-        font-size: clamp(16px, 1.4vw, 22px);
-        margin-top: 20px;
-        max-width: 600px;
-        font-weight: 600;
-      }
-
-      h4 {
-        font-size: 16px;
-        margin-top: 20px;
-      }
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        at top left,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 70%
+      );
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      z-index: 10;
+      mask-composite: exclude;
+      pointer-events: none;
     }
   }
 
-  /* media queries */
+  // child
+  .banner__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(249, 146, 151, 0.2);
+    mask-image: linear-gradient(
+      180deg,
+      #fff 71.48%,
+      rgba(255, 255, 255, 0.4) 100%
+    );
+
+    .overlay {
+      inset: 0;
+      z-index: 2;
+      position: absolute;
+      pointer-events: none;
+      background-image: linear-gradient(
+        360deg,
+        rgba(0, 0, 0, 0.8) 31.45%,
+        rgba(0, 0, 0, 0.7) 75%,
+        rgba(0, 0, 0, 0.55) 84.5%
+      );
+    }
+
+    .img {
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      pointer-events: none;
+      object-position: center;
+    }
+  }
+
+  @media screen and (min-width: 500px) {
+    .banner__overlay__wrapper {
+      mask-image: radial-gradient(
+        101% 13% at 50% 103%,
+        transparent 50%,
+        white 52%
+      );
+    }
+
+    .banner__content {
+      max-height: 400px;
+    }
+  }
+
   @media screen and (min-width: 768px) {
-    .banner__content__wrapper {
-      .banner__content {
-        justify-content: center;
-      }
+    .banner__content {
+      justify-content: center;
+    }
+  }
+
+  @media screen and (min-width: 960px) {
+    .banner {
+      /* filter: drop-shadow(24px 32px 24px rgba(0, 0, 0, 0.6)); */
     }
   }
 
   @media screen and (min-width: 1000px) {
-    height: calc(100vh - var(--half-curve-height));
-    max-height: ${({ theme }) => theme.maxHeight};
+    .banner__overlay__wrapper {
+      border-radius: 18px;
+      mask-image: radial-gradient(
+        100% 15% at 50% 102%,
+        transparent 50%,
+        white 50%
+      );
+    }
 
-    .banner__content__wrapper {
-      .banner__content {
-        h2 {
-          font-size: clamp(20px, 5vw, 40px);
-          max-width: 550px;
-        }
+    .banner__content {
+      max-height: 500px;
+      h2 {
+        font-size: clamp(20px, 5vw, 40px);
+        max-width: 550px;
       }
     }
   }
 
   @media screen and (min-width: 1300px) {
-    .banner__content__wrapper {
-      .banner__content {
-        h2 {
-          font-size: clamp(20px, 8vw, 60px);
-          font-weight: 700;
-        }
+    .banner__content {
+      max-height: 550px;
+      h2 {
+        font-size: clamp(20px, 8vw, 60px);
+        font-weight: 700;
+        max-width: 600px;
+      }
+
+      h3,
+      h4 {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1500px) {
+    .banner__content {
+      max-height: 650px;
+      h2 {
+        font-size: clamp(20px, 9vw, 70px);
+        max-width: 700px;
       }
     }
   }

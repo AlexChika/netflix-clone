@@ -1,21 +1,20 @@
 import styled from "styled-components";
 import Banner from "./Banner";
 import Footer from "../general/Footer";
+import CurveUI from "./CurvedUI";
+import TrendingNow from "./TrendingNow";
 import LandingPageFaqs from "./LandingPageFaqs";
 import MoreReasonsToJoin from "./MoreReasonsToJoin";
-import GradientWrapper from "./GradientWrapper";
-import TrendingNow from "./TrendingNow";
 
 function LandingPageFive() {
   return (
     <Wrapper>
-      <GradientWrapper>
-        <Banner />
-        <TrendingNow />
-        <MoreReasonsToJoin />
-      </GradientWrapper>
+      <Banner />
+      <CurveUI />
+      <TrendingNow />
+      <MoreReasonsToJoin />
       <LandingPageFaqs />
-      <Footer bg="" />
+      <Footer bg="#000000" />
     </Wrapper>
   );
 }
@@ -24,8 +23,10 @@ export default LandingPageFive;
 
 const Wrapper = styled.div`
   /* general styles */
-  --general-bg: #111111;
-  background-color: var(--general-bg);
+  --curve-height: clamp(60px, 8vw, 65px);
+  --half-curve-height: calc(var(--curve-height) / 2);
+  --quarter-curve-height: calc(var(--curve-height) / 4);
+  background-color: black;
   animation: fadeOut 1s linear;
 
   @keyframes fadeOut {
@@ -35,5 +36,9 @@ const Wrapper = styled.div`
     to {
       opacity: 1;
     }
+  }
+
+  @media screen and (min-width: 1000px) {
+    --curve-height: 6.5vw;
   }
 `;

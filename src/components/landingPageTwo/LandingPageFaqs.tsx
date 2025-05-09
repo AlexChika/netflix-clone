@@ -44,6 +44,7 @@ const Wrapper = styled.div`
 
     h3 {
       margin-top: 20px !important ;
+      font-size: 18.72px;
     }
   }
 

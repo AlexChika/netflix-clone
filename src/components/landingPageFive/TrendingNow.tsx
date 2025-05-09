@@ -6,7 +6,7 @@ import { arrayShuffle } from "../../utils/functions/functions";
 async function asyncGetImages() {
   async function photo(index: number): Promise<string> {
     const { default: img } = await import(
-      `../../assets/landingPageFour/carousel${index}.webp`
+      `../../assets/landingPageFive/carousel${index}.webp`
     );
     return img;
   }
@@ -24,11 +24,11 @@ async function asyncGetImages() {
 }
 
 function TrendingNow() {
-  const id = "8a9yhufsiy";
+  const id = "jdsjsikfnuo878";
   const maxItems = 15;
   const leftBtnRef = useRef<null | HTMLButtonElement>(null);
   const rightBtnRef = useRef<null | HTMLButtonElement>(null);
-  const scrollRef = useRef({ scrollBy: 6, current: 0 });
+  const scrollRef = useRef({ scrollBy: 5, current: 0 });
   const [images, setImages] = useState<{ id: number; src: string }[]>([]);
 
   function scroll(dir?: "left" | "right") {
@@ -71,7 +71,7 @@ function TrendingNow() {
 
   useEffect(() => {
     async function call() {
-      const _images = arrayShuffle(await asyncGetImages()).slice(0, 18);
+      const _images = arrayShuffle(await asyncGetImages()).slice(0, 15);
       setImages(_images);
     }
 
@@ -84,10 +84,9 @@ function TrendingNow() {
       let scrollBy = 0;
 
       if (width > 0) scrollBy = 2;
-      if (width >= 440) scrollBy = 3;
-      if (width >= 600) scrollBy = 4;
-      if (width >= 768) scrollBy = 5;
-      if (width >= 1000) scrollBy = 6;
+      if (width >= 500) scrollBy = 3;
+      if (width >= 768) scrollBy = 4;
+      if (width >= 1000) scrollBy = 5;
       scrollRef.current.scrollBy = scrollBy;
     }
 
@@ -141,15 +140,13 @@ const Wrapper = styled.div`
   color: white;
   margin: 0 auto;
   padding: 0px 20px;
-  width: 92%;
   max-width: 1200px;
-  margin-top: 20px;
+  margin-top: 50px;
 
   .heading {
-    text-align: left;
     font-size: clamp(18px, 1.5vw, 26px);
-    font-size: clamp(18px, 2.4vw, 40px);
-    font-weight: 800;
+    margin-bottom: 17px;
+    font-weight: 700;
   }
 
   .carousel__wrapper {
@@ -187,7 +184,7 @@ const Wrapper = styled.div`
 
         .card__number {
           position: absolute;
-          top: 10%;
+          bottom: 10%;
           left: -1px;
           font-size: clamp(25px, 9vw, 80px);
           font-weight: 700;
@@ -206,10 +203,10 @@ const Wrapper = styled.div`
     top: 50%;
     transform: translateY(-50%);
     border-radius: 8px;
-    background-color: #6d6d6d;
+    background-color: #424242;
 
     &:hover {
-      background-color: #6d6d6d7a;
+      background-color: #5e5e5e;
     }
   }
 
@@ -221,7 +218,7 @@ const Wrapper = styled.div`
     right: -15px;
   }
 
-  @media screen and (min-width: 440px) {
+  @media screen and (min-width: 500px) {
     .carousel__wrapper {
       .carousel {
         .card {
@@ -232,7 +229,7 @@ const Wrapper = styled.div`
     }
   }
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     .carousel__wrapper {
       .carousel {
         .card {
@@ -243,24 +240,12 @@ const Wrapper = styled.div`
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1000px) {
     .carousel__wrapper {
       .carousel {
         .card {
           width: calc(100% / 5);
           min-width: calc(100% / 5);
-        }
-      }
-    }
-  }
-
-  @media screen and (min-width: 1000px) {
-    width: 87%;
-    .carousel__wrapper {
-      .carousel {
-        .card {
-          width: calc(100% / 6);
-          min-width: calc(100% / 6);
         }
       }
     }
