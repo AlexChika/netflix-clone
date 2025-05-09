@@ -109,6 +109,7 @@ const FormWrapper = styled.form<WrapperProp>`
       visibility: ${({ $data }) => ($data.inputEmail ? "hidden" : "visible")};
       font-weight: 500;
       z-index: 1;
+      font-size: 16px;
     }
 
     input {

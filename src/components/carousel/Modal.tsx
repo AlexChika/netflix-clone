@@ -65,8 +65,14 @@ const Button = styled.button`
   font-size: 25px;
   font-weight: 200;
   position: absolute;
-  top: 5px;
-  right: -25px;
+  top: 15px;
+  right: 20px;
   opacity: 0.8;
   color: red;
+  z-index: 999997;
+
+  @media screen and (min-width: 1100px) {
+    right: -25px;
+    top: 5px;
+  }
 `;

@@ -124,11 +124,11 @@ function ImageCarousel(props: Props) {
     }, interval * 1000);
 
     return () => clearInterval(intervalID);
-  }, [play, interval, stack]);
+  }, [play, interval, stack]); // auto slideshow
 
   useEffect(() => {
     setPage(index);
-  }, [index, setPage]);
+  }, [index, setPage]); // set page
 
   return (
     <CarouselWrapper $src={images[index].src}>
@@ -235,14 +235,14 @@ const CarouselWrapper = styled.div<WrapperProp>`
   background-position: bottom;
   background-size: cover;
   color: white;
-  padding: 12px 50px;
+  padding: 35px 50px 0px 50px;
+  border: 3px solid rgba(30, 41, 59, 0.5);
 
   .title_pause_play_wrapper {
     display: relaive;
     z-index: 10;
     display: flex;
     align-items: center;
-    padding: 24px 0px;
 
     h2 {
       font-size: 20px;
@@ -312,13 +312,17 @@ const CarouselWrapper = styled.div<WrapperProp>`
   }
 
   .tail {
+    /* display: none; */
     position: relative;
     max-width: 672px;
-    margin-top: -34px;
-    margin-bottom: 36px;
+    /* transform: translateY(-60%); */
+    margin-top: -130px;
+    /* margin-top: -34px; */
+    /* margin-bottom: 36px; */
+    /* border: 3px solid #cbd5e1; */
     border-bottom: 3px solid #cbd5e1;
-    padding-top: 44px;
-    padding-bottom: 44px;
+    /* padding-top: 44px; */
+    /* padding-bottom: 44px; */
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -351,6 +355,7 @@ const CarouselWrapper = styled.div<WrapperProp>`
     height: 176px;
     color: white;
     cursor: grab;
+    margin: 20px auto;
 
     .image_wrap {
       position: absolute;
@@ -370,13 +375,19 @@ const CarouselWrapper = styled.div<WrapperProp>`
   }
 
   .disclaimer_wrapper {
+    margin-top: auto;
     display: flex;
     align-items: center;
     gap: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-top: 25px;
+    color: white;
 
     h1 {
       text-align: center;
       font-size: 16px;
+      text-shadow: 1px 1px 1px black;
     }
 
     span {
@@ -425,6 +436,38 @@ const CarouselWrapper = styled.div<WrapperProp>`
       button {
         font-size: 20px;
       }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 10px 20px 25px 20px;
+
+    .image_container {
+      margin: 10px auto;
+    }
+
+    .arrow_btns_wrapper {
+      .left_btn,
+      .right_btn {
+        height: 20px;
+        width: 20px;
+      }
+
+      .left_btn {
+        left: -23px;
+      }
+
+      .right_btn {
+        right: -23px;
+      }
+    }
+
+    .tail {
+      display: none;
+    }
+
+    .disclaimer_wrapper {
+      display: none;
     }
   }
 

@@ -155,6 +155,15 @@ const Wrapper = styled.div<{ $bg: string }>`
     margin: 0 auto;
   }
 
+  p,
+  a {
+    font-size: 16px;
+  }
+
+  h3 {
+    font-size: 18.72px;
+  }
+
   .icon {
     font-size: clamp(14px, 1.6vw, 25px);
     padding: 0;

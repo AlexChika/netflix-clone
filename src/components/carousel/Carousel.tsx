@@ -58,6 +58,6 @@ const Wrapper = styled.div`
   pointer-events: none;
 
   @media screen and (max-width: 760px) {
-    display: none; // check this
+    /* display: none; // check this */
   }
 `;
