@@ -58,14 +58,12 @@ const Wrapper = styled.div`
     }
 
     .div2 {
-      /* opacity: 75%; */
       background: radial-gradient(
         92.16% 100% at 49.87% 0%,
         rgba(247, 99, 107, 0.3) 19.86%,
         rgba(0, 0, 0, 0) 100%
       );
 
-      /* height: 75rem; */
       width: 100%;
     }
 
@@ -75,8 +73,6 @@ const Wrapper = styled.div`
         rgba(44, 66, 156, 0.15) 0%,
         rgba(0, 0, 0, 0) 100%
       );
-
-      /* height: 75rem; */
       width: 100%;
     }
     /* background: linear-gradient(#3b2c4d, #a93e74, #131010ac 90%); // change

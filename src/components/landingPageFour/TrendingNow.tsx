@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
+import { MdArrowForwardIos, MdArrowBackIosNew } from "react-icons/md";
 import { arrayShuffle } from "../../utils/functions/functions";
 
 async function asyncGetImages() {
@@ -128,7 +128,7 @@ function TrendingNow() {
           onClick={() => scroll("left")}
           className="btn__wrapper left"
         >
-          <MdArrowBackIos />
+          <MdArrowBackIosNew />
         </button>
       </div>
     </Wrapper>

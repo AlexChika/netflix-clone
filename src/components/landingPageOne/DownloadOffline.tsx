@@ -75,8 +75,8 @@ const Wrapper = styled.div`
       display: flex;
 
       .animation__box {
-        width: max(170px, 55%);
-        height: max(25%, 50px);
+        width: max(200px, 55%);
+        height: max(20%, 50px);
         margin: 0 auto;
         padding: 8px 15px;
         background-color: black;
@@ -84,29 +84,32 @@ const Wrapper = styled.div`
         margin-bottom: 6%;
         border-radius: 12px;
         border: 2px solid gray;
-
+        gap: 10px;
         display: flex;
         align-items: center;
         justify-content: space-between;
 
         .movie__image {
           width: 22%;
-          height: 100%;
-          margin-right: 15px;
+          min-width: 20px;
+          height: auto;
         }
 
         .gif__image {
-          height: 100%;
+          aspect-ratio: 1/1;
+          width: 22%;
+          min-width: 20px;
         }
 
         .text_container {
+          width: 100%;
           p {
-            font-size: clamp(1rem, 3vw, 1.6rem);
+            font-size: clamp(14px, 3vw, 22px);
           }
 
           small {
             color: blue;
-            font-size: clamp(0.9rem, 2vw, 1.6rem);
+            font-size: clamp(12px, 2vw, 20px);
           }
         }
       }

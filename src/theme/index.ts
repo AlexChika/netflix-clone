@@ -80,44 +80,6 @@ button,input,a{
 .center{
   margin:0 auto;
 }
-
-
-
-  /* @media screen and (max-width: 1000px) {
-  ::-webkit-scrollbar {
-    width: 3px;
-    height: 1px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: rgb(88, 88, 88);
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgb(15, 50, 59);
-  }
-} */
-
-/* @media screen and (min-width: 1000px) {
-  ::-webkit-scrollbar {
-    width: 5px;
-    height: 2px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: gray;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: rgb(88, 88, 88);
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgb(15, 50, 59);
-  }
-} */
 `;
 
 export default GlobalStyle;
