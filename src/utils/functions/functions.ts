@@ -6,4 +6,8 @@ function arrayShuffle<T>(arr: T[]) {
   return arr;
 }
 
-export { arrayShuffle };
+function isType<T>(obj: unknown, p: keyof T): obj is T {
+  return (obj as T)[p] !== undefined;
+}
+
+export { arrayShuffle, isType };

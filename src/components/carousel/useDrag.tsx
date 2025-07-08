@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef } from "react";
+import { isType } from "../../utils/functions/functions";
 
 function useDrag(
   ballRef: React.RefObject<HTMLDivElement | null>,
@@ -32,7 +33,7 @@ function useDrag(
   );
 
   const getCoordinates = (event: MouseEvent | TouchEvent) => {
-    if (event instanceof TouchEvent) {
+    if (isType(event, "touches")) {
       return {
         x: event.touches[0]?.clientX,
         y: event.touches[0]?.clientY,

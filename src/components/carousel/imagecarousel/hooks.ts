@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
+import { isType } from "../../../utils/functions/functions";
 
 function useClickOnce(timeout = 1500) {
   const [waiting, setWaiting] = useState(false);
@@ -48,7 +49,7 @@ function getCoordinates(
   event: MouseEvent | TouchEvent,
   evType: "start" | "end" = "start"
 ) {
-  if (event instanceof TouchEvent) {
+  if (isType(event, "touches")) {
     const touch =
       evType === "start" ? event.touches[0] : event.changedTouches[0];
     return {
